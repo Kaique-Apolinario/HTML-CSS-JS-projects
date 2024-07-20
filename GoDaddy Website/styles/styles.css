@@ -1,0 +1,147 @@
+nav, .sideNav {
+    background: rgb(3, 65, 89);
+    background: linear-gradient(90deg, rgba(3, 65, 89, 1) 2%, rgba(2, 89, 81, 1) 100%);
+    font-size: 30px;
+    border-radius: 50px;
+    padding: 0 50px;
+    font-weight: bolder;
+    border: solid 2px #038C3E;
+    position: relative;
+}
+
+.hamburguer {
+    display: none;
+}
+
+nav,
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+}
+
+@media (max-width:1200px) {
+    nav li{
+        font-size: 15px;
+        width: 150px;
+        height: 50px;
+    }
+}
+
+@media (max-width:1000px) {
+    nav ul{
+        display: none;
+    }
+
+    .hamburguer {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburguer:hover {
+        background-color: rgba(0, 0, 0, 0.671);
+        border-radius: 10px;
+    }
+
+    .hamburguer:active {
+        background-color: black;
+    }
+}
+
+
+@keyframes rotateLetters {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+
+    }
+}
+
+@keyframes bpStyle {
+    to {
+        background-color: black;
+        color: pink;
+        box-shadow:0px 0px 0px 5px pink;
+        border-radius: 5px;
+    }
+}
+
+.BP {
+    display: flex;
+}
+
+.BP:hover {
+    animation-name: bpStyle;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+
+
+    .letterC,
+    .letterN {
+        animation-name: rotateLetters;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes xgStyle {
+    to {
+        background-color: black;
+        border-radius: 5px;
+    }
+}
+
+.XG:hover {
+    animation-name: xgStyle;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.AE {
+    position: relative;
+}
+
+.AE::before {
+    content:" ";
+    position: absolute;
+    background-color: aqua;
+    width: 10px;
+    right: 0;
+    height: 100%;
+}
+
+.AE::before:hover {
+    width: 100px;
+}
+
+.sideNav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    visibility: hidden;
+    z-index: 999;
+}
+
+.sideNav ul {
+    flex-direction: column;
+}
+
